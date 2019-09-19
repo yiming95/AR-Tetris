@@ -1,14 +1,4 @@
-﻿//  /*********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************
-//   * Produced by Skard Games										                  *
-//   * Facebook: https://goo.gl/5YSrKw											      *
-//   * Contact me: https://goo.gl/y5awt4								              *											
-//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
-//   *********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************/
-
+﻿
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -47,7 +37,7 @@ public class MainMenu : MonoBehaviour
     public void MainMenuStartAnimation()
     {
         menuButtons.GetComponent<RectTransform>().DOAnchorPosY(-850, 1, true);
-        tetrisLogoText.GetComponent<RectTransform>().DOAnchorPosY(600, 1, true);
+        tetrisLogoText.GetComponent<RectTransform>().DOAnchorPosY(650, 1, true);
     }
 
     public void MainMenuEndAnimation()

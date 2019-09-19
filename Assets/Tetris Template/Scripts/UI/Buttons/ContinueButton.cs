@@ -1,22 +1,31 @@
-﻿//  /*********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************
-//   * Produced by Skard Games										                 *
-//   * Facebook: https://goo.gl/5YSrKw											     *
-//   * Contact me: https://goo.gl/y5awt4								             *
-//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
-//   *********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************/
-
+﻿
 using UnityEngine;
 using System.Collections;
 
 public class ContinueButton : MonoBehaviour {
 
+    public void OnClickPlayButton()
+    {
+        Managers.Audio.PlayUIClick();
+        if (Managers.Game.blockHolder.childCount==0) {
+        Managers.UI.popUps.ActivateDifficultyPopUp();
+        Managers.UI.panel.SetActive(true);
+        } else
+        {
+            Managers.Game.SetState(typeof(GamePlayState));
+        }
+    }
+
     public void OnClickContinueButton()
     {
         Managers.Audio.PlayUIClick();
+        Managers.Game.SetState(typeof(GamePlayState));
+    }
+
+    public void OnClickContinueHardButton()
+    {
+        Managers.Audio.PlayUIClick();
+        GameManager.difficulty = 1;
         Managers.Game.SetState(typeof(GamePlayState));
     }
 }

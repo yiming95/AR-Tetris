@@ -1,14 +1,4 @@
-﻿//  /*********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************
-//   * Produced by Skard Games										                 *
-//   * Facebook: https://goo.gl/5YSrKw											     *
-//   * Contact me: https://goo.gl/y5awt4								             *
-//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
-//   *********************************************************************************
-//   *********************************************************************************
-//   *********************************************************************************/
-
+﻿
 using UnityEngine;
 using System.Collections;
 
@@ -17,9 +7,12 @@ public class PopUp : MonoBehaviour
     public GameObject gameOverPopUp;
     public GameObject settingsPopUp;
     public GameObject playerStatsPopUp;
+    public GameObject leaderboardPopUp;
+    public GameObject difficultyPopUp;
 
     public void ActivateGameOverPopUp()
     {
+        difficultyPopUp.SetActive(false);
         gameOverPopUp.transform.parent.gameObject.SetActive(true);
         gameOverPopUp.SetActive(true);
         Managers.UI.activePopUp = gameOverPopUp;
@@ -37,6 +30,20 @@ public class PopUp : MonoBehaviour
         playerStatsPopUp.transform.parent.gameObject.SetActive(true);
         playerStatsPopUp.SetActive(true);
         Managers.UI.activePopUp = playerStatsPopUp;
+    }
+
+    public void ActivateLeaderboardPopUp()
+    {
+        leaderboardPopUp.transform.parent.gameObject.SetActive(true);
+        leaderboardPopUp.SetActive(true);
+        Managers.UI.activePopUp = leaderboardPopUp;
+    }
+
+    public void ActivateDifficultyPopUp()
+    {
+        difficultyPopUp.transform.parent.gameObject.SetActive(true);
+        difficultyPopUp.SetActive(true);
+        Managers.UI.activePopUp = difficultyPopUp;
     }
 
 }

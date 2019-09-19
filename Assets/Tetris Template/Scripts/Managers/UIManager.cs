@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour {
             StartCoroutine(ActivateInGameUI());
 		}	
 	}
-
+    
     IEnumerator ActivateMainMenu()
     {
         inGameUI.InGameUIEndAnimation();
@@ -54,6 +54,7 @@ public class UIManager : MonoBehaviour {
         mainMenu.MainMenuEndAnimation();       
         yield return new WaitForSeconds(0.3f);
         mainMenu.gameObject.SetActive(false);
+        popUps.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
         inGameUI.InGameUIStartAnimation();
     }
