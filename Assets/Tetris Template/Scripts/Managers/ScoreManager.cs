@@ -18,7 +18,6 @@ public class ScoreManager : MonoBehaviour {
         }
         else
         {
-            highScore = 0;
             Managers.UI.inGameUI.UpdateScoreUI();
         }
     }
