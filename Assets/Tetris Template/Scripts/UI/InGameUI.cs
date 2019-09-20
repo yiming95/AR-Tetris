@@ -9,7 +9,8 @@ public class InGameUI : MonoBehaviour {
 	public Text score;
     public Text highScore;
     public Text scoreLabel;
-    public Text highScoreLabel;  
+    public Text highScoreLabel;
+    public Text nextLabel;
     
     public GameObject gameOverPopUp;
 
@@ -25,6 +26,7 @@ public class InGameUI : MonoBehaviour {
         highScoreLabel.rectTransform.DOAnchorPosY(-334, 1, true);
         score.rectTransform.DOAnchorPosY(-375, 1, true);
         highScore.rectTransform.DOAnchorPosY(-375, 1, true);
+        nextLabel.rectTransform.DOAnchorPosY(150, 1, true);
     }
 
     public void InGameUIEndAnimation()

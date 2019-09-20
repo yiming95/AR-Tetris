@@ -34,7 +34,7 @@ public class TetrisShape : MonoBehaviour
         if (!Managers.Grid.IsValidGridPosition(this.transform))
         {
             Managers.Game.SetState(typeof(GameOverState));
-            Destroy(this.gameObject);
+            // Destroy(this.gameObject);
         }
     }
 

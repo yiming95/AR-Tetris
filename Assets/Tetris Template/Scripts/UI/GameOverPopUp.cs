@@ -12,8 +12,10 @@ public class GameOverPopUp : MonoBehaviour {
     {
         GameManager.difficultyTemp = GameManager.difficulty;
         gameOverScore.text = Managers.Score.currentScore.ToString();
+        Managers.Score.ResetCurrentScore();
         Managers.UI.panel.SetActive(true);
         GameManager.difficulty = 0;
+        
     }
 
     public void BackToMainMenu()
