@@ -8,5 +8,7 @@ public class GameBackButton : MonoBehaviour {
 	{
         Managers.Audio.PlayUIClick();
         Managers.Game.SetState(typeof(MenuState));
+        SpawnManager.next.SetActive(false);
+        GameManager.difficultyTemp = GameManager.difficulty;
     }
 }

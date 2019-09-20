@@ -26,7 +26,7 @@ public class InGameUI : MonoBehaviour {
         highScoreLabel.rectTransform.DOAnchorPosY(-334, 1, true);
         score.rectTransform.DOAnchorPosY(-375, 1, true);
         highScore.rectTransform.DOAnchorPosY(-375, 1, true);
-        nextLabel.rectTransform.DOAnchorPosY(150, 1, true);
+        nextLabel.rectTransform.DOAnchorPosY(900, 1, true);
     }
 
     public void InGameUIEndAnimation()
@@ -35,6 +35,7 @@ public class InGameUI : MonoBehaviour {
         highScoreLabel.rectTransform.DOAnchorPosY(-334 + 650, 0.3f, true);
         score.rectTransform.DOAnchorPosY(-375 + 650, 0.3f, true);
         highScore.rectTransform.DOAnchorPosY(-375 + 650, 0.3f, true);
+        nextLabel.rectTransform.DOAnchorPosY(900 + 650, 0.3f, true);
     }
 
 

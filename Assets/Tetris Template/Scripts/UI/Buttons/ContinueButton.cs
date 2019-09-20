@@ -20,6 +20,7 @@ public class ContinueButton : MonoBehaviour {
     {
         Managers.Audio.PlayUIClick();
         Managers.Game.SetState(typeof(GamePlayState));
+        SpawnManager.next.SetActive(true);
     }
 
     public void OnClickContinueHardButton()
@@ -27,5 +28,6 @@ public class ContinueButton : MonoBehaviour {
         Managers.Audio.PlayUIClick();
         GameManager.difficulty = 1;
         Managers.Game.SetState(typeof(GamePlayState));
+        SpawnManager.next.SetActive(true);
     }
 }

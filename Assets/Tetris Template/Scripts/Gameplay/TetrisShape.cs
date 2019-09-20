@@ -31,6 +31,7 @@ public class TetrisShape : MonoBehaviour
     void Start()
     {
         // Default position not valid? Then it's game over
+        if (this.tag.Equals("next")) { } else
         if (!Managers.Grid.IsValidGridPosition(this.transform))
         {
             Managers.Game.SetState(typeof(GameOverState));

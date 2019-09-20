@@ -5,8 +5,8 @@ public class SpawnManager : MonoBehaviour {
 
 	public GameObject[] shapeTypes;
     public GameObject temp;
-    public GameObject next;
-    public bool isFirst = true;
+    public static GameObject next;
+    public static bool isFirst = true;
     public int i;
 
     public void Spawn()
@@ -37,7 +37,13 @@ public class SpawnManager : MonoBehaviour {
             }
         }
         Destroy(next);
-        //next = Instantiate(shapeTypes[i], new Vector3(0, 100, 0), Quaternion.identity);
+        Debug.Log("next destroyed");
+        next = Instantiate(shapeTypes[i]);
+        Debug.Log("next instantiated");
+        next.tag = "next";
+        Debug.Log("tag changed");
+        next.transform.localPosition = new Vector2(4.5f, 18f);
+        next.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
 
     }
 }
