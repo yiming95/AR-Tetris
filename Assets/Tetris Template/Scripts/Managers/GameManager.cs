@@ -1,11 +1,19 @@
-﻿
+﻿//  /*********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************
+//   * Produced by Skard Games										                  *
+//   * Facebook: https://goo.gl/5YSrKw											      *
+//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
+//   *********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************/
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int difficulty = 0; // 0 for easy, 1 for hard
-    public static int difficultyTemp = 0;
-    public bool isGameActive;
+	public bool isGameActive;
     public TetrisShape currentShape;
     public Transform blockHolder;
     public PlayerStats stats;
@@ -36,15 +44,8 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    void Update()
+	void Update()
 	{
-        if (difficulty == 1)
-        {
-            Time.timeScale = 2;
-        } else
-        {
-            Time.timeScale = 1;
-        }
 		if (currentState != null)
 		{
 			currentState.OnUpdate();

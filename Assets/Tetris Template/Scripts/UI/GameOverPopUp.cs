@@ -1,4 +1,14 @@
-﻿
+﻿//  /*********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************
+//   * Produced by Skard Games										                 *
+//   * Facebook: https://goo.gl/5YSrKw											     *
+//   * Contact me: https://goo.gl/y5awt4								             *
+//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
+//   *********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************/
+
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -10,14 +20,8 @@ public class GameOverPopUp : MonoBehaviour {
     
     void OnEnable()
     {
-        GameManager.difficultyTemp = GameManager.difficulty;
         gameOverScore.text = Managers.Score.currentScore.ToString();
-        Managers.Score.ResetCurrentScore();
-        Destroy(SpawnManager.next);
-        SpawnManager.isFirst = true;
         Managers.UI.panel.SetActive(true);
-        GameManager.difficulty = 0;
-        
     }
 
     public void BackToMainMenu()

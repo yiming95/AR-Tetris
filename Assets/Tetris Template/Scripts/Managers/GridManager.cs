@@ -1,4 +1,14 @@
-﻿
+﻿//  /*********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************
+//   * Produced by Skard Games										                  *
+//   * Facebook: https://goo.gl/5YSrKw											      *
+//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
+//   *********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************/
+
 using UnityEngine;
 using System.Collections;
 
@@ -28,8 +38,6 @@ public class GridManager : MonoBehaviour
 
     IEnumerator DeleteRows(int k)
     {
-        int combo = 0;
-        int score = 0;
         for (int y = k; y < 20; ++y)
         {
             if (IsRowFull(y))
@@ -37,32 +45,11 @@ public class GridManager : MonoBehaviour
                 DeleteRow(y);
                 DecreaseRowsAbove(y + 1);
                 --y;
-                ++combo;
                 Managers.Audio.PlayLineClearSound();
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.8f);
             }
-        }
-        if (combo == 1)
-        {
-            score = 100;
-        } else if (combo == 2)
-        {
-            score = 250;
-        } else if (combo == 3)
-        {
-            score = 400;
-        } else if (combo == 4)
-        {
-            score = 800;
-        }
-        if (GameManager.difficulty == 0)
-        {
-            Managers.Score.OnScore(score);
-        } else
-        {
-            Managers.Score.OnScore(2 * score);
-        }
-
+        }     
+        
         foreach (Transform t in Managers.Game.blockHolder)
             if (t.childCount <= 1)
             {
@@ -85,6 +72,7 @@ public class GridManager : MonoBehaviour
 
     public void DeleteRow(int y)
     {
+        Managers.Score.OnScore(100);
         for (int x = 0; x < 10; ++x)
         {
             Destroy(gameGridcol[x].row[y].gameObject);

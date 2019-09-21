@@ -1,4 +1,14 @@
-﻿
+﻿//  /*********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************
+//   * Produced by Skard Games										                  *
+//   * Facebook: https://goo.gl/5YSrKw											      *
+//   * Contact me: https://goo.gl/y5awt4								              *											
+//   * Developed by Cavit Baturalp Gürdin: https://tr.linkedin.com/in/baturalpgurdin *
+//   *********************************************************************************
+//   *********************************************************************************
+//   *********************************************************************************/
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -29,7 +39,7 @@ public class UIManager : MonoBehaviour {
             StartCoroutine(ActivateInGameUI());
 		}	
 	}
-    
+
     IEnumerator ActivateMainMenu()
     {
         inGameUI.InGameUIEndAnimation();
@@ -44,7 +54,6 @@ public class UIManager : MonoBehaviour {
         mainMenu.MainMenuEndAnimation();       
         yield return new WaitForSeconds(0.3f);
         mainMenu.gameObject.SetActive(false);
-        popUps.gameObject.SetActive(false);
         inGameUI.gameObject.SetActive(true);
         inGameUI.InGameUIStartAnimation();
     }

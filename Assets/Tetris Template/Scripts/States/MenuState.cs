@@ -7,7 +7,7 @@ public class MenuState : _StatesBase {
 
 	public override void OnActivate ()
 	{		
-		// Debug.Log ("<color=green>Menu State</color> OnActive");	
+		Debug.Log ("<color=green>Menu State</color> OnActive");	
 
 		Managers.UI.ActivateUI (Menus.MAIN);
         Managers.Cam.ZoomOut();
@@ -17,12 +17,12 @@ public class MenuState : _StatesBase {
 
 	public override void OnDeactivate ()
 	{
-		// Debug.Log ("<color=red>Menu State</color> OnDeactivate");
+		Debug.Log ("<color=red>Menu State</color> OnDeactivate");
 	}
 
 	public override void OnUpdate ()
 	{
-		// Debug.Log ("<color=yellow>Menu State</color> OnUpdate");
+		Debug.Log ("<color=yellow>Menu State</color> OnUpdate");
 	}
 
 	#endregion
