@@ -32,7 +32,7 @@
 
 &emsp;&emsp;&emsp;&emsp;data={"mobile":"XXX","password":"XXX"}
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Success:
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Success: username
 
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Fail:
 
