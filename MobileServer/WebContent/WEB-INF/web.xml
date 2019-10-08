@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>MobileServer</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>RegisterServlet</display-name>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>VerifyServlet</display-name>
+    <servlet-name>VerifyServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.VerifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VerifyServlet</servlet-name>
+    <url-pattern>/VerifyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadServlet</display-name>
+    <servlet-name>UploadServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.UploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadServlet</servlet-name>
+    <url-pattern>/UploadServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestMarkServlet</display-name>
+    <servlet-name>RequestMarkServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.RequestMarkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestMarkServlet</servlet-name>
+    <url-pattern>/RequestMarkServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
