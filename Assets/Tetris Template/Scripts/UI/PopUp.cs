@@ -1,18 +1,34 @@
 ﻿
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class PopUp : MonoBehaviour
 {
+    public GameObject LoginPopUp;
+    public GameObject VerifyPopUp;
     public GameObject gameOverPopUp;
     public GameObject settingsPopUp;
     public GameObject playerStatsPopUp;
     public GameObject leaderboardPopUp;
     public GameObject difficultyPopUp;
 
+    internal void ActivateLoginPopUp()
+    {
+        LoginPopUp.transform.parent.gameObject.SetActive(true);
+        LoginPopUp.SetActive(true);
+        Managers.UI.activePopUp = LoginPopUp;
+    }
+
+    internal void ActivateVerifyPopUp()
+    {
+        VerifyPopUp.transform.parent.gameObject.SetActive(true);
+        VerifyPopUp.SetActive(true);
+        Managers.UI.activePopUp = VerifyPopUp;
+    }
+
     public void ActivateGameOverPopUp()
     {
-        difficultyPopUp.SetActive(false);
         gameOverPopUp.transform.parent.gameObject.SetActive(true);
         gameOverPopUp.SetActive(true);
         Managers.UI.activePopUp = gameOverPopUp;
@@ -30,6 +46,12 @@ public class PopUp : MonoBehaviour
         playerStatsPopUp.transform.parent.gameObject.SetActive(true);
         playerStatsPopUp.SetActive(true);
         Managers.UI.activePopUp = playerStatsPopUp;
+    }
+
+    public void DeactivatePlayerStatsPopUp()
+    {
+        playerStatsPopUp.transform.parent.gameObject.SetActive(false);
+        playerStatsPopUp.SetActive(false);
     }
 
     public void ActivateLeaderboardPopUp()

@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
 {
     public static int difficulty = 0; // 0 for easy, 1 for hard
     public static int difficultyTemp = 0;
+
+    public string username = "";
+    public string phone = "";
+    public string password = "";
+
     public bool isGameActive;
     public TetrisShape currentShape;
     public Transform blockHolder;
