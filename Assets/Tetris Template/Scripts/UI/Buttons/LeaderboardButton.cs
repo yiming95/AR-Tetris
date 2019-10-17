@@ -54,8 +54,11 @@ public class LeaderboardButton : MonoBehaviour
             //返回：服务器响应流 
             Debug.LogError(str);
             string[] infos = str.Split('}');
+            string myPos = "My Position is: "+str.Split('@')[0];
+
             string userTxt = "Name\n";
             string scoreTxt = "Score\n";
+            GameObject.Find("MyPosition").GetComponent<Text>().text = myPos;
 
             foreach (string info in infos)
             {
