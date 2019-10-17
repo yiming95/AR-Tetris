@@ -58,3 +58,17 @@
 
 ### --------------------------------------------------------------------------------
 
+HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(new Uri("http://10.13.140.6:8080/MobileServer/RequestMarkServlet"));
+        webReq.Method = "POST";
+        webReq.ContentType = "application/x-www-form-urlencoded;charset=gb2312";
+        using (WebResponse res = webReq.GetResponse())
+        {
+            //在这里对接收到的页面内容进行处理
+            Stream responseStream = res.GetResponseStream();
+            StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
+            string str = streamReader.ReadToEnd();
+            streamReader.Close();
+            responseStream.Close();
+            //返回：服务器响应流 
+            Debug.LogError(str);
+        }
