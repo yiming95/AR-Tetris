@@ -41,7 +41,7 @@ public class LoginButton : MonoBehaviour
         // POST info to server
 
         // GET result from server 
-        string result = "false";
+        string result = "";
 
         if (result.Equals("false"))
         {
