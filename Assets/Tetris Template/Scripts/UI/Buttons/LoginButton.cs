@@ -92,10 +92,10 @@ public class LoginButton : MonoBehaviour
         Managers.Game.phone = GameObject.Find("PhoneNumber").GetComponent<InputField>().text;
         Debug.Log(Managers.Game.phone);
 
-        if (type.Equals("SignIn"))
+        if (type.Equals("SignUp"))
         {
-            Managers.Game.name = GameObject.Find("Username").GetComponent<InputField>().text;
-            Debug.Log(Managers.Game.name);
+            Managers.Game.username = GameObject.Find("Username").GetComponent<InputField>().text;
+            Debug.Log(Managers.Game.username);
         }
 
         Managers.Game.password = GameObject.Find("Password").GetComponent<InputField>().text;
@@ -104,7 +104,7 @@ public class LoginButton : MonoBehaviour
         if (type.Equals("SignUp"))
         {
             return "{\"mobile\":\"" + Managers.Game.phone +
-                "\", \"username\":\"" + Managers.Game.name +
+                "\", \"username\":\"" + Managers.Game.username +
                 "\",\"password\":\"" + Managers.Game.password +
                 "\"}";
         } else if (type.Equals("SignIn"))
