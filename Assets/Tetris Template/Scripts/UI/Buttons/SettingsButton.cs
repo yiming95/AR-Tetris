@@ -8,6 +8,6 @@ public class SettingsButton : MonoBehaviour {
     {
         Managers.Audio.PlayUIClick();
         Managers.UI.popUps.ActivateSettingsPopUp();
-        Managers.UI.panel.SetActive(true);
+        //Managers.UI.panel.SetActive(true);
     }
 }

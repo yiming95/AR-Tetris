@@ -54,6 +54,18 @@ public class PopUp : MonoBehaviour
         playerStatsPopUp.SetActive(false);
     }
 
+    public void DeactivateLoginPopUp()
+    {
+        LoginPopUp.transform.parent.gameObject.SetActive(false);
+        LoginPopUp.SetActive(false);
+    }
+
+    public void DeactivateDifficultyPopUp()
+    {
+        difficultyPopUp.transform.parent.gameObject.SetActive(false);
+        difficultyPopUp.SetActive(false);
+    }
+
     public void ActivateLeaderboardPopUp()
     {
         leaderboardPopUp.transform.parent.gameObject.SetActive(true);

@@ -15,7 +15,7 @@ public class GameOverPopUp : MonoBehaviour {
         Managers.Score.ResetCurrentScore();
         Destroy(SpawnManager.next);
         SpawnManager.isFirst = true;
-        Managers.UI.panel.SetActive(true);
+        //Managers.UI.panel.SetActive(true);
         GameManager.difficulty = 0;
         
     }

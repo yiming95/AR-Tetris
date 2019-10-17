@@ -41,7 +41,6 @@ public class ScoreManager : MonoBehaviour {
     public void ResetScore()
     {
         currentScore = 0;
-        highScore = Managers.Game.stats.highScore;
         Managers.UI.inGameUI.UpdateScoreUI();
     }
 

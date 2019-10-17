@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class GameOverState : _StatesBase {
 
@@ -7,7 +8,7 @@ public class GameOverState : _StatesBase {
 	public override void OnActivate ()
 	{
         Managers.Game.isGameActive = false;
-        Managers.Game.stats.highScore = Managers.Score.currentScore;
+        Managers.Game.stats.highScore = Math.Max(Managers.Score.currentScore, Managers.Game.stats.highScore);
         Managers.Game.stats.numberOfGames++;
         Managers.UI.popUps.ActivateGameOverPopUp();
         Managers.Audio.PlayLoseSound();

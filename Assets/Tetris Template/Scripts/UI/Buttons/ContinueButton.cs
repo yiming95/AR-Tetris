@@ -11,7 +11,7 @@ public class ContinueButton : MonoBehaviour {
         if (Managers.Game.username == "")
         {
             Managers.UI.popUps.ActivateLoginPopUp();
-            Managers.UI.panel.SetActive(true);
+            //Managers.UI.panel.SetActive(true);
         }
         else
         {
@@ -19,7 +19,7 @@ public class ContinueButton : MonoBehaviour {
             if (Managers.Game.blockHolder.childCount == 0)
             {
                 Managers.UI.popUps.ActivateDifficultyPopUp();
-                Managers.UI.panel.SetActive(true);
+                //Managers.UI.panel.SetActive(true);
             }
             else
             {
@@ -30,6 +30,7 @@ public class ContinueButton : MonoBehaviour {
 
     public void OnClickContinueButton()
     {
+        Managers.UI.popUps.DeactivateDifficultyPopUp();
         Managers.Audio.PlayUIClick();
         Managers.Game.SetState(typeof(GamePlayState));
         SpawnManager.next.SetActive(true);
@@ -37,6 +38,7 @@ public class ContinueButton : MonoBehaviour {
 
     public void OnClickContinueHardButton()
     {
+        Managers.UI.popUps.DeactivateDifficultyPopUp();
         Managers.Audio.PlayUIClick();
         GameManager.difficulty = 1;
         Managers.Game.SetState(typeof(GamePlayState));
