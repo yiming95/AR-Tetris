@@ -44,4 +44,18 @@ public class ContinueButton : MonoBehaviour {
         Managers.Game.SetState(typeof(GamePlayState));
         SpawnManager.next.SetActive(true);
     }
+
+    public ARController AR;
+    public void AROnClickContinueButton()
+    {
+        if (AR.ARObject != null)
+        {
+            Managers.Audio.PlayUIClick();
+            Managers.Game.SetState(typeof(GamePlayState));
+        }
+        else
+        {
+            AR.OnClick_PlaceObject();
+        }
+    }
 }
