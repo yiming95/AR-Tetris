@@ -39,11 +39,11 @@ public class LeaderboardButton : MonoBehaviour
         Debug.Log(s);
         using (WebResponse res = updateHS.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
+            //Processing the received page content here
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             string str = streamReader.ReadToEnd();
-            //返回：服务器响应流 
+            //Returns: server response stream 
             Debug.LogError(str);
             responseStream.Close();
         }
@@ -55,11 +55,11 @@ public class LeaderboardButton : MonoBehaviour
         webReq.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
         using (WebResponse res = webReq.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
+            //Processing the received page content here
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             string str = streamReader.ReadToEnd();
-            //返回：服务器响应流 
+            //Returns: server response stream 
             Debug.LogError(str);
             string[] infos = str.Split('}');
             string myPos = "My Rank is: " + str.Split('@')[0];
@@ -113,11 +113,9 @@ public class LeaderboardButton : MonoBehaviour
         Debug.Log(s);
         using (WebResponse res = updateHS.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             string str = streamReader.ReadToEnd();
-            //返回：服务器响应流 
             Debug.LogError(str);
             responseStream.Close();
         }
@@ -129,11 +127,9 @@ public class LeaderboardButton : MonoBehaviour
         webReq.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
         using (WebResponse res = webReq.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             string str = streamReader.ReadToEnd();
-            //返回：服务器响应流 
             Debug.LogError(str);
             string[] infos;
             string userTxt = "Name\n";

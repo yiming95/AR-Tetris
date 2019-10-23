@@ -17,7 +17,7 @@ public class GetGPS : MonoBehaviour
 
     /// <summary>  
 
-    /// 初始化一次位置  
+    /// Initialize a position 
 
     /// </summary>  
 
@@ -45,7 +45,7 @@ public class GetGPS : MonoBehaviour
 
     /// <summary>  
 
-    /// 刷新位置信息（按钮的点击事件）  
+    /// Refresh location information (button click event)  
 
     /// </summary>  
 
@@ -76,7 +76,7 @@ public class GetGPS : MonoBehaviour
 
     /// <summary>  
 
-    /// 停止刷新位置（节省手机电量）  
+    /// Stop refreshing the location (saving mobile phone power)  
 
     /// </summary>  
 
@@ -92,9 +92,9 @@ public class GetGPS : MonoBehaviour
 
     {
 
-        // Input.location 用于访问设备的位置属性（手持设备）, 静态的LocationService位置    
+        // Input.location - Location attribute for accessing the device (handheld device), static LocationService location    
 
-        // LocationService.isEnabledByUser 用户设置里的定位服务是否启用  
+        // LocationService.isEnabledByUser - Whether the location service in the user settings is enabled 
 
         if (!Input.location.isEnabledByUser)
 
@@ -106,7 +106,7 @@ public class GetGPS : MonoBehaviour
 
         }
 
-        // LocationService.Start() 启动位置服务的更新,最后一个位置坐标会被使用    
+        // LocationService.Start() - Start location service update, the last position coordinate will be used   
 
         Input.location.Start(10.0f, 10.0f);
 
@@ -116,7 +116,7 @@ public class GetGPS : MonoBehaviour
 
         {
 
-            // 暂停协同程序的执行(1秒)    
+            // Suspend execution of the coroutine (1 second)   
 
             yield return new WaitForSeconds(1);
 

@@ -26,11 +26,11 @@ public class LoginButton : MonoBehaviour
         Debug.Log(info);
         using (WebResponse res = updateHS.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
+            //Processing the received page content here
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             nameFromServer = streamReader.ReadToEnd();
-            //返回：服务器响应流 
+            //Returns: server response stream 
             Debug.LogError(nameFromServer);
             responseStream.Close();
         }
@@ -80,11 +80,11 @@ public class LoginButton : MonoBehaviour
         Debug.Log(info);
         using (WebResponse res = updateHS.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
+            //Processing the received page content here
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             result = streamReader.ReadToEnd();
-            //返回：服务器响应流 
+            //Returns: server response stream 
             Debug.LogError(result);
             responseStream.Close();
         }
@@ -127,11 +127,9 @@ public class LoginButton : MonoBehaviour
         Debug.Log(info);
         using (WebResponse res = updateHS.GetResponse())
         {
-            //在这里对接收到的页面内容进行处理
             Stream responseStream = res.GetResponseStream();
             StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("UTF-8"));
             result = streamReader.ReadToEnd();
-            //返回：服务器响应流 
             Debug.LogError(result);
             responseStream.Close();
         }
