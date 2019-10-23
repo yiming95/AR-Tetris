@@ -60,7 +60,7 @@ public class LeaderboardButton : MonoBehaviour
             //返回：服务器响应流 
             Debug.LogError(str);
             string[] infos = str.Split('}');
-            string myPos = "My Position is: " + str.Split('@')[0];
+            string myPos = "My Rank is: " + str.Split('@')[0];
 
             string userTxt = "Name\n";
             string scoreTxt = "Score\n";
@@ -134,7 +134,7 @@ public class LeaderboardButton : MonoBehaviour
             //返回：服务器响应流 
             Debug.LogError(str);
             string[] infos = str.Split('}');
-            string myPos = "My Position is: " + str.Split('@')[0];
+            string myPos = "My Rank is: " + str.Split('@')[0];
 
             string userTxt = "Name\n";
             string scoreTxt = "Score\n";

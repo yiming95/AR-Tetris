@@ -10,8 +10,8 @@ public class GetGPS : MonoBehaviour
 {
 
     string GetGps = "";
-    public static double x;
-    public static double y;
+    public static float x;
+    public static float y;
 
     public Text ShowGPS;
 
@@ -27,9 +27,15 @@ public class GetGPS : MonoBehaviour
 
         StartCoroutine(StartGPS());
 
-        GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
-
-        GetGps = GetGps + " Time:" + Input.location.lastData.timestamp;
+        if (x == 0 || y == 0)
+        {
+            GetGps = "GPS unavailable";
+            GameObject.Find("MyRegion").GetComponent<Text>().text = "";
+        }
+        else
+        {
+            GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
+        }
 
         ShowGPS.text = GetGps;
 
@@ -52,9 +58,15 @@ public class GetGPS : MonoBehaviour
         x = Input.location.lastData.latitude;
         y = Input.location.lastData.longitude;
 
-        GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
-
-        GetGps = GetGps + " Time:" + Input.location.lastData.timestamp;
+        if (x == 0 || y == 0)
+        {
+            GetGps = "GPS unavailable";
+            GameObject.Find("MyRegion").GetComponent<Text>().text = "";
+        }
+        else
+        {
+            GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
+        }
 
         ShowGPS.text = GetGps;
 
@@ -136,10 +148,18 @@ public class GetGPS : MonoBehaviour
 
         {
 
-            GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
+            float x = Input.location.lastData.latitude;
+            float y = Input.location.lastData.longitude;
 
-            GetGps = GetGps + " Time:" + Input.location.lastData.timestamp;
-
+            if (x == 0 || y == 0)
+            {
+                GetGps = "GPS unavailable";
+                GameObject.Find("MyRegion").GetComponent<Text>().text = "";
+            }
+            else
+            {
+                GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
+            }
             Debug.Log("Keyidingwei");
 
             yield return new WaitForSeconds(100);
