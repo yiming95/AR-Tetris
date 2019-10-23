@@ -7239,7 +7239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &610082497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19813,6 +19813,7 @@ MonoBehaviour:
   leaderboardPopUp: {fileID: 610082496}
   difficultyPopUp: {fileID: 267309530}
   localPopUp: {fileID: 1772676}
+  ARinfoPopUp: {fileID: 0}
 --- !u!1001 &1726108558
 PrefabInstance:
   m_ObjectHideFlags: 0
