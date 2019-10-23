@@ -21,6 +21,8 @@ public class RegisterService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			sh.close();
 		}
 		return true;
 	}
@@ -28,12 +30,14 @@ public class RegisterService {
 	public boolean register(String mobile, String username, String password) {
 		SqlHelper sh = new SqlHelper();
 		String sql = "insert into player values(?,?,?,0,?)";
-		String token = RandomString.generateRandom(4);
+		String token = RandomString.generateRandom(6);
 		String[] params = { mobile, username, password, token };
-		SMSInvoke.sendVerified(token);
 		if(sh.updateExecute(sql, params)>0) {
+			SMSInvoke.sendVerified(token, mobile);
+			sh.close();
 			return true;
 		}else {
+			sh.close();
 			return false;			
 		}
 	}
@@ -41,12 +45,14 @@ public class RegisterService {
 	public boolean changeToken(String mobile) {
 		SqlHelper sh = new SqlHelper();
 		String sql = "update player set token = ? where mobile = ?";
-		String token = RandomString.generateRandom(4);
+		String token = RandomString.generateRandom(6);
 		String[] params = {token, mobile};
-		SMSInvoke.sendVerified(token);
 		if(sh.updateExecute(sql, params) > 0) {
+			SMSInvoke.sendVerified(token, mobile);
+			sh.close();
 			return true;
 		}else {
+			sh.close();
 			return false;
 		}
 		
@@ -65,6 +71,8 @@ public class RegisterService {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+		} finally{
+			sh.close();
 		}
 		return false;
 	}
@@ -74,8 +82,10 @@ public class RegisterService {
 		String sql = "update player set available = ? where mobile = ?";
 		String[] params = {"1", mobile};
 		if(sh.updateExecute(sql, params) > 0) {
+			sh.close();
 			return true;
 		}else {
+			sh.close();
 			return false;
 		}
 	}

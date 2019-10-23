@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSONObject;
 import com.txg.mobile.domain.Player;
 import com.txg.mobile.service.MarkService;
 import com.txg.mobile.utils.ChangeToJSON;
@@ -27,11 +28,16 @@ public class RequestMarkServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("RequestMarkServlet");
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		List<Player> list = ms.getGlobalTopMark(10);
+		String data = request.getParameter("data");
+		JSONObject dataObject = JSONObject.parseObject(data);
+		String mobile = dataObject.getString("mobile");
+		Integer rank = ms.findRank(mobile);
+		List<Player> list = ms.getGlobalTopMark(5);
 		PrintWriter writer = response.getWriter();
-		writer.write(ChangeToJSON.playerToJSON(list).toString());
+		writer.write(rank+"@"+ChangeToJSON.playerToJSON(list).toString());
 	}
 
 }

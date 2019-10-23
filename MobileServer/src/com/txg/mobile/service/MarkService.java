@@ -24,43 +24,70 @@ public class MarkService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			sh.close();
 		}
 		return false;
 	}
-	
+
+	public Integer findRank(String mobile) {
+		SqlHelper sh = new SqlHelper();
+		String sql = "select * from(\n" + 
+				"select * ,@current_rank := @current_rank + 1 as rank\n" + 
+				"From mark m, (select @current_rank := 0)q\n" + 
+				"order by mark desc) AS r\n" + 
+				"where mobile = ?";
+		String[] params = {mobile};
+		ResultSet rs = sh.queryExecute(sql, params);
+		try {
+			if(rs.next()) {
+				return rs.getInt("rank");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	public boolean insertMark(String mobile, String mark) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		SqlHelper sh = new SqlHelper();
 		String sql = "insert into mark values(?,?,?)";
 		String[] params = { mobile, mark, sdf.format(new Date()) };
-		if(sh.updateExecute(sql, params)>0) {
+		if (sh.updateExecute(sql, params) > 0) {
+			sh.close();
 			return true;
-		}else {
-			return false;			
+		} else {
+			sh.close();
+			return false;
 		}
 	}
+
 	public boolean updateMark(String mobile, String mark) {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		SqlHelper sh = new SqlHelper();
 		String sql = "update mark set mark = ?, lastUpdate = ? where mobile = ?";
 		String[] params = { mark, sdf.format(new Date()), mobile };
-		if(sh.updateExecute(sql, params)>0) {
+		if (sh.updateExecute(sql, params) > 0) {
+			sh.close();
 			return true;
-		}else {
-			return false;			
+		} else {
+			sh.close();
+			return false;
 		}
 	}
-	
-	public List<Player> getGlobalTopMark(int top){
+
+	public List<Player> getGlobalTopMark(int top) {
 		List<Player> result = new ArrayList<Player>();
-		
+
 		SqlHelper sh = new SqlHelper();
 		String sql = "select m.mobile, m.mark, p.username from mark m left join player p "
-				+ "on m.mobile = p.mobile order by m.mark limit ?";
-		Object[] params = {top};
+				+ "on m.mobile = p.mobile order by m.mark desc limit ?";
+		Object[] params = { top };
 		try {
 			ResultSet rs = sh.queryExecute(sql, params);
-			while(rs.next()) {
+			while (rs.next()) {
 				Player p = new Player();
 				p.setMobile(rs.getString("mobile"));
 				p.setUsername(rs.getString("username"));
@@ -70,6 +97,8 @@ public class MarkService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+		} finally {
+			sh.close();
 		}
 		return result;
 	}

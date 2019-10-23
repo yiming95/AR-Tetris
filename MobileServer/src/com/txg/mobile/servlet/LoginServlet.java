@@ -30,11 +30,16 @@ public class LoginServlet extends HttpServlet{
 		String password = dataObject.getString("password");
 		
 		PrintWriter pw = response.getWriter();
-		
-		if (ls.login(mobile,password)==true) {
-			pw.write("Login successful.");
+		String username = ls.login(mobile,password);
+		Integer mark = ls.getMark(mobile);
+		if (username != null) {
+			if(mark == null) {
+				pw.write(username+",0");				
+			}else {
+				pw.write(username+","+mark);
+			}
 		}else {
-			pw.write("You need to register first.");
+			pw.write("");
 		}
 	}
 	

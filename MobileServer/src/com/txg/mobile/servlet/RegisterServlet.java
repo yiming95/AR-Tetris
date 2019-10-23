@@ -28,6 +28,7 @@ public class RegisterServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		
 		String data = request.getParameter("data");
+		System.out.println("Register"+ data);
 		JSONObject dataObject = JSONObject.parseObject(data);
 		String mobile = dataObject.getString("mobile");
 		String username = dataObject.getString("username");
