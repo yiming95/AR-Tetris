@@ -8,8 +8,8 @@ public class SMSInvoke {
 
 	// Send SMS with verificaiton code
 	public static void sendVerified(String str, String mobile) {
-		final String ACCOUNT_SID = "AC0342aad9d0248e1da29b7d847f89c107";
-		final String AUTH_TOKEN = "9ffc18e0ee9de0b58ca4793085005d99";
+		final String ACCOUNT_SID = "AC0342aad9d0248e1da29b7d847f89c107XXXX";
+		final String AUTH_TOKEN = "9ffc18e0ee9de0b58ca4793085005d99XXXX";
 		if(!mobile.contains("+")) {
 			mobile = "+61"+mobile;			
 		}

@@ -12,6 +12,7 @@ public class PopUp : MonoBehaviour
     public GameObject playerStatsPopUp;
     public GameObject leaderboardPopUp;
     public GameObject difficultyPopUp;
+    public GameObject localPopUp;
 
     internal void ActivateLoginPopUp()
     {
@@ -71,6 +72,13 @@ public class PopUp : MonoBehaviour
         leaderboardPopUp.transform.parent.gameObject.SetActive(true);
         leaderboardPopUp.SetActive(true);
         Managers.UI.activePopUp = leaderboardPopUp;
+    }
+
+    public void ActivateLocalPopUp()
+    {
+        localPopUp.transform.parent.gameObject.SetActive(true);
+        localPopUp.SetActive(true);
+        Managers.UI.activePopUp = localPopUp;
     }
 
     public void ActivateDifficultyPopUp()
