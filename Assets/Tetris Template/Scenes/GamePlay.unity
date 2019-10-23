@@ -19812,7 +19812,7 @@ MonoBehaviour:
   playerStatsPopUp: {fileID: 2014704410}
   leaderboardPopUp: {fileID: 610082496}
   difficultyPopUp: {fileID: 267309530}
-  localPopUp: {fileID: 0}
+  localPopUp: {fileID: 1772676}
 --- !u!1001 &1726108558
 PrefabInstance:
   m_ObjectHideFlags: 0
