@@ -11,7 +11,9 @@ using System.Collections;
 
 public class LeaderboardButton : MonoBehaviour
 {
-    public static string servletUri = "http://10.13.144.219:8080";
+    //public static string servletUri = "http://10.13.144.219:8080";
+    public static string servletUri = "122.51.41.188";
+    
     private static readonly HttpClient client = new HttpClient();
     string GetGps;
 
