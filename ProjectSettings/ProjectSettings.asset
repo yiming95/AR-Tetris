@@ -260,7 +260,7 @@ PlayerSettings:
   templatePackageId: 
   templateDefaultScene: 
   AndroidTargetArchitectures: 5
-  AndroidSplashScreenScale: 0
+  AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: c094a6f87ef5948ab8e2d99fc8727e5d, type: 3}
   AndroidKeystoreName: '{inproject}: '
   AndroidKeyaliasName: 
