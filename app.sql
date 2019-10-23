@@ -26,6 +26,8 @@ CREATE TABLE `mark` (
   `mobile` varchar(45) NOT NULL,
   `mark` int(50) NOT NULL,
   `lastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `gps_x` double DEFAULT NULL,
+  `gps_y` double DEFAULT NULL,
   PRIMARY KEY (`mobile`),
   CONSTRAINT `FK_mobile` FOREIGN KEY (`mobile`) REFERENCES `player` (`mobile`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,7 +39,7 @@ CREATE TABLE `mark` (
 
 LOCK TABLES `mark` WRITE;
 /*!40000 ALTER TABLE `mark` DISABLE KEYS */;
-INSERT INTO `mark` VALUES ('123456',2000,'2019-10-08 02:09:08'),('234567',3000,'2019-10-09 02:09:00'),('345678',500,'2019-10-08 08:00:05');
+INSERT INTO `mark` VALUES ('0434240637',100,'2019-10-23 03:09:25',1,1),('123456',100,'2019-10-23 03:09:25',2,2),('234567',3000,'2019-10-23 03:09:25',3,3),('345678',500,'2019-10-23 03:09:25',4,4);
 /*!40000 ALTER TABLE `mark` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +55,7 @@ CREATE TABLE `player` (
   `username` varchar(45) NOT NULL,
   `password` varchar(45) NOT NULL,
   `available` tinyint(4) NOT NULL DEFAULT '0',
-  `token` char(4) DEFAULT NULL,
+  `token` char(10) DEFAULT NULL,
   PRIMARY KEY (`mobile`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -64,7 +66,7 @@ CREATE TABLE `player` (
 
 LOCK TABLES `player` WRITE;
 /*!40000 ALTER TABLE `player` DISABLE KEYS */;
-INSERT INTO `player` VALUES ('123456','LI','654321',1,'xg4W'),('234567','DENG','765432',1,'abcd'),('345678','SONG','876543',1,'bcde');
+INSERT INTO `player` VALUES ('0431683781','qqq','111',1,'MOBOAA'),('0434240637','ddd','111',1,'0I4w8B'),('123456','LI','654321',1,'xg4W'),('234567','DENG','765432',1,'abcd'),('345678','SONG','876543',1,'bcde');
 /*!40000 ALTER TABLE `player` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-08 16:30:04
+-- Dump completed on 2019-10-23 14:10:13
