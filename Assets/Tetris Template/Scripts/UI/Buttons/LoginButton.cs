@@ -55,6 +55,7 @@ public class LoginButton : MonoBehaviour
             Managers.Game.stats.highScore = Int32.Parse(nameFromServer.Split(',')[1]);
             Debug.Log(Managers.Score.highScore);
             Managers.UI.inGameUI.UpdateScoreUI();
+            Managers.Audio.PlayLineClearSound();//login successfully audio
             Managers.UI.popUps.DeactivateLoginPopUp();
         }
     }
@@ -103,6 +104,7 @@ public class LoginButton : MonoBehaviour
         } else
         {
             GameObject.Find("Login").SetActive(false);
+            Managers.Audio.PlayLineClearSound();//sign up successfully audio
             Managers.UI.popUps.ActivateVerifyPopUp();
             //Managers.UI.panel.SetActive(true);
         }
