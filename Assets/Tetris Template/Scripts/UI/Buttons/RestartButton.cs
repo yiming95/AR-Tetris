@@ -16,8 +16,5 @@ public class RestartButton : MonoBehaviour {
         Managers.Game.SetState(typeof(GamePlayState));
         Managers.UI.inGameUI.gameOverPopUp.SetActive(false);
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> c21ae3f774cb9119bed1eeefebcd7a6dd3bdf437
 }
