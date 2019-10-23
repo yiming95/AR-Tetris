@@ -19,7 +19,7 @@ public class LoginButton : MonoBehaviour
         string nameFromServer = "";
 
         // POST info to server
-        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri("http://122.51.41.188:8080/MobileServer/LoginServlet?" + info));
+        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri(LeaderboardButton.servletUri + "/MobileServer/LoginServlet?" + info));
         updateHS.Method = "GET";
         updateHS.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
 
@@ -48,6 +48,8 @@ public class LoginButton : MonoBehaviour
             GameObject.Find("Password").GetComponent<InputField>().text = "";
         } else
         {
+            Managers.Game.phone = GameObject.Find("PhoneNumber").GetComponent<InputField>().text;
+            Managers.Game.password = GameObject.Find("Password").GetComponent<InputField>().text;
             Managers.Game.username = nameFromServer.Split(',')[0];
             Managers.Score.highScore = Int32.Parse(nameFromServer.Split(',')[1]);
             Managers.Game.stats.highScore = Int32.Parse(nameFromServer.Split(',')[1]);
@@ -69,7 +71,7 @@ public class LoginButton : MonoBehaviour
         string result = "";
 
         // POST info to server
-        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri("http://122.51.41.188:8080/MobileServer/RegisterServlet?" + info));
+        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri(LeaderboardButton.servletUri + "/MobileServer/RegisterServlet?" + info));
         updateHS.Method = "GET";
         updateHS.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
 
@@ -115,7 +117,7 @@ public class LoginButton : MonoBehaviour
         Debug.Log(info);
 
         // POST info to server
-        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri("http://122.51.41.188:8080/MobileServer/VerifyServlet?" + info));
+        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri(LeaderboardButton.servletUri + "/MobileServer/VerifyServlet?" + info));
         updateHS.Method = "GET";
         updateHS.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
         string result = "";

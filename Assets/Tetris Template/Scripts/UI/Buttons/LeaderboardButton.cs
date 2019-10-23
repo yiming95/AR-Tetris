@@ -9,6 +9,7 @@ using System;
 
 public class LeaderboardButton : MonoBehaviour
 {
+    public static string servletUri = "http://10.13.144.219:8080";
     private static readonly HttpClient client = new HttpClient();
     public void OnClickLeaderboardButton()
     {
@@ -21,7 +22,7 @@ public class LeaderboardButton : MonoBehaviour
                     "\",\"mark\":\"" + Managers.Score.highScore +
                     "\"}";
 
-        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri("http://122.51.41.188:8080/MobileServer/UploadServlet?" + s));
+        HttpWebRequest updateHS = (HttpWebRequest)WebRequest.Create(new Uri(servletUri + "/MobileServer/UploadServlet?" + s));
         updateHS.Method = "GET";
         updateHS.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
 
@@ -42,8 +43,8 @@ public class LeaderboardButton : MonoBehaviour
             //stream.Close();
 
 
-        HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(new Uri("http://122.51.41.188:8080/MobileServer/RequestMarkServlet"));
-        webReq.Method = "POST";
+        HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(new Uri(servletUri + "/MobileServer/RequestMarkServlet?" + s));
+        webReq.Method = "GET";
         webReq.ContentType = "application/x-www-form-urlencoded;charset=UTF8";
         using (WebResponse res = webReq.GetResponse())
         {
