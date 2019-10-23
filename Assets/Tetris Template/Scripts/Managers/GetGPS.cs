@@ -10,6 +10,8 @@ public class GetGPS : MonoBehaviour
 {
 
     string GetGps = "";
+    public static double x;
+    public static double y;
 
     public Text ShowGPS;
 
@@ -46,6 +48,9 @@ public class GetGPS : MonoBehaviour
     {
 
         StartCoroutine(StartGPS());
+
+        x = Input.location.lastData.latitude;
+        y = Input.location.lastData.longitude;
 
         GetGps = "N:" + Input.location.lastData.latitude + " E:" + Input.location.lastData.longitude;
 

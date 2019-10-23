@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1772677
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2197,7 +2197,7 @@ GameObject:
   - component: {fileID: 169226056}
   - component: {fileID: 169226055}
   m_Layer: 5
-  m_Name: Usernames
+  m_Name: Usernames2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3553,7 +3553,7 @@ GameObject:
   - component: {fileID: 269968725}
   - component: {fileID: 269968724}
   m_Layer: 5
-  m_Name: MyPosition
+  m_Name: MyPosition2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19160,7 +19160,7 @@ GameObject:
   - component: {fileID: 1680282847}
   - component: {fileID: 1680282846}
   m_Layer: 5
-  m_Name: Scores
+  m_Name: Scores2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19812,6 +19812,7 @@ MonoBehaviour:
   playerStatsPopUp: {fileID: 2014704410}
   leaderboardPopUp: {fileID: 610082496}
   difficultyPopUp: {fileID: 267309530}
+  localPopUp: {fileID: 0}
 --- !u!1001 &1726108558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20011,7 +20012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5774cca48052b649a9560dfd4aecf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowGPS: {fileID: 0}
+  ShowGPS: {fileID: 482795914}
 --- !u!114 &1733026268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20068,7 +20069,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1733026268}
-        m_MethodName: OnClickLeaderboardButton
+        m_MethodName: OnClickLocalButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
