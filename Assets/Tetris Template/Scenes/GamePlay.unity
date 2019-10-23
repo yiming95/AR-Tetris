@@ -9949,7 +9949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Please Input Your 4-digits Verification Code:'
+  m_Text: 'Please Input Your 6-digits Verification Code:'
 --- !u!222 &911939986
 CanvasRenderer:
   m_ObjectHideFlags: 0
