@@ -19,7 +19,6 @@
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/RegisterServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>LoginServlet</display-name>
@@ -30,7 +29,6 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>VerifyServlet</display-name>
@@ -60,5 +58,15 @@
   <servlet-mapping>
     <servlet-name>RequestMarkServlet</servlet-name>
     <url-pattern>/RequestMarkServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestLocalServlet</display-name>
+    <servlet-name>RequestLocalServlet</servlet-name>
+    <servlet-class>com.txg.mobile.servlet.RequestLocalServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestLocalServlet</servlet-name>
+    <url-pattern>/RequestLocalServlet</url-pattern>
   </servlet-mapping>
 </web-app>
