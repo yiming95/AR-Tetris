@@ -133,30 +133,39 @@ public class LeaderboardButton : MonoBehaviour
             string str = streamReader.ReadToEnd();
             //返回：服务器响应流 
             Debug.LogError(str);
-            string[] infos = str.Split('}');
-            string myPos = "My Rank is: " + str.Split('@')[0];
-
+            string[] infos;
             string userTxt = "Name\n";
             string scoreTxt = "Score\n";
+
+            string myPos = "My Rank is: " + str.Split('@')[0];
             GameObject.Find("MyPosition2").GetComponent<Text>().text = myPos;
 
-            foreach (string info in infos)
-            {
-                if (info.Length > 1)
-                {
-                    userTxt = String.Concat(userTxt, info.Substring(info.IndexOf("username") + 11, info.LastIndexOf("\"") - info.IndexOf("username") - 11) + "\n");
-                }
+            if (str.Split('@')[0].Equals("None")) {
+                infos = null;
+                GameObject.Find("Usernames2").GetComponent<Text>().text = userTxt;
+                GameObject.Find("Scores2").GetComponent<Text>().text = scoreTxt;
             }
-            GameObject.Find("Usernames2").GetComponent<Text>().text = userTxt;
+            else
+            {
+                infos = str.Split('}');
+                foreach (string info in infos)
+                {
+                    if (info.Length > 1)
+                    {
+                        userTxt = String.Concat(userTxt, info.Substring(info.IndexOf("username") + 11, info.LastIndexOf("\"") - info.IndexOf("username") - 11) + "\n");
+                    }
+                }
+                GameObject.Find("Usernames2").GetComponent<Text>().text = userTxt;
 
-            foreach (string info in infos)
-            {
-                if (info.Length > 1)
+                foreach (string info in infos)
                 {
-                    scoreTxt = String.Concat(scoreTxt, info.Substring(info.IndexOf("mark") + 6, info.LastIndexOf(",\"") - info.IndexOf("mark") - 6) + "\n");
+                    if (info.Length > 1)
+                    {
+                        scoreTxt = String.Concat(scoreTxt, info.Substring(info.IndexOf("mark") + 6, info.LastIndexOf(",\"") - info.IndexOf("mark") - 6) + "\n");
+                    }
                 }
+                GameObject.Find("Scores2").GetComponent<Text>().text = scoreTxt;
             }
-            GameObject.Find("Scores2").GetComponent<Text>().text = scoreTxt;
 
             streamReader.Close();
             responseStream.Close();

@@ -46,6 +46,7 @@ public class LoginButton : MonoBehaviour
 
             Managers.Game.password = "";
             GameObject.Find("Password").GetComponent<InputField>().text = "";
+            GameObject.Find("Error").GetComponent<CanvasGroup>().alpha = 1;
         } else
         {
             Managers.Game.phone = GameObject.Find("PhoneNumber").GetComponent<InputField>().text;
