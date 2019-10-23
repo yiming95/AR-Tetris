@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
+  - enabled: 0
+    path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Tetris Template/Scenes/GamePlay.unity
+    guid: 857ddcb0d616b8e48ad88d15d2ca921a
+  - enabled: 0
+    path: Assets/Tetris Template/Scenes/ARGamePlay.unity
+    guid: b0b1320379cb244529144ef9f1ef4188
+  - enabled: 1
+    path: Assets/Tetris Template/Scenes/AR.unity
+    guid: 4aa29a95d38f046a699d40eb96808d4f
   m_configObjects: {}
