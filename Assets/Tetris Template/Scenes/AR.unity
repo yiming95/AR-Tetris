@@ -11474,7 +11474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.59607846, g: 0.86274517, b: 0.33333334, a: 1}
+  m_Color: {r: 0.35002124, g: 0.7075472, b: 0.25031152, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -16511,6 +16511,7 @@ MonoBehaviour:
   playerStatsPopUp: {fileID: 2014704410}
   leaderboardPopUp: {fileID: 0}
   difficultyPopUp: {fileID: 0}
+  localPopUp: {fileID: 0}
 --- !u!114 &1723155408
 MonoBehaviour:
   m_ObjectHideFlags: 0
