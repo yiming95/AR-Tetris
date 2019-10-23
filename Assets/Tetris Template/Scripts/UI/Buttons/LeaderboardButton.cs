@@ -7,12 +7,17 @@ using System.IO;
 using System.Text;
 using System;
 
+using System.Collections;
+
 public class LeaderboardButton : MonoBehaviour
 {
     public static string servletUri = "http://10.13.144.219:8080";
     private static readonly HttpClient client = new HttpClient();
+    string GetGps;
+
     public void OnClickLeaderboardButton()
     {
+    
         Managers.UI.popUps.DeactivatePlayerStatsPopUp();
         Managers.Audio.PlayUIClick();
         Managers.UI.popUps.ActivateLeaderboardPopUp();

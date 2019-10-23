@@ -16,4 +16,18 @@ public class RestartButton : MonoBehaviour {
         Managers.Game.SetState(typeof(GamePlayState));
         Managers.UI.inGameUI.gameOverPopUp.SetActive(false);
     }
+
+    public void OnClickARRestartButton()
+    {
+        GameManager.difficulty = GameManager.difficultyTemp;
+        Managers.Audio.PlayUIClick();
+        GameObject.Find("Grid");
+        Managers.Score.ResetCurrentScore();
+        Destroy(SpawnManager.next);
+        SpawnManager.isFirst = true;
+        Managers.Game.isGameActive = false;
+        Managers.Game.SetState(typeof(GamePlayState));
+        Managers.UI.inGameUI.gameOverPopUp.SetActive(false);
+    }
+
 }
