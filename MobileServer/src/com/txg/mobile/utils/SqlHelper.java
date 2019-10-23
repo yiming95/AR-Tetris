@@ -50,6 +50,8 @@ public class SqlHelper {
 					ps.setInt(i+1, (int) params[i]);
 				}else if(params[i].getClass().toString().split(" ")[1].equals("java.lang.String")) {
 					ps.setString(i+1, (String) params[i]);
+				}else if(params[i].getClass().toString().split(" ")[1].equals("java.lang.Double")) {
+					ps.setDouble(i+1, (Double) params[i]);
 				}
 			}
 			rs = ps.executeQuery();
@@ -65,6 +67,25 @@ public class SqlHelper {
 			ps = con.prepareStatement(sql);
 			for(int i = 0;i< params.length; i++) {
 				ps.setString(i+1, params[i]);
+			}
+			return ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	public int updateExecute(String sql, Object[] params) {
+		try {
+			ps = con.prepareStatement(sql);
+			for(int i = 0; i< params.length; i++) {
+				if (params[i].getClass().toString().split(" ")[1].equals("java.lang.Integer")) {
+					ps.setInt(i+1, (int) params[i]);
+				}else if(params[i].getClass().toString().split(" ")[1].equals("java.lang.String")) {
+					ps.setString(i+1, (String) params[i]);
+				}else if(params[i].getClass().toString().split(" ")[1].equals("java.lang.Double")) {
+					ps.setDouble(i+1, (Double) params[i]);
+				}
 			}
 			return ps.executeUpdate();
 		} catch (SQLException e) {
