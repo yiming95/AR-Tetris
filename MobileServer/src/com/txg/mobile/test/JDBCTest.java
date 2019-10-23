@@ -33,6 +33,8 @@ public class JDBCTest {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			sh.close();
 		}
 	}
 }

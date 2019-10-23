@@ -13,7 +13,7 @@ public class SqlHelper {
 	public ResultSet rs;
 	
 	public String driver = "com.mysql.jdbc.Driver";
-	public String url = "jdbc:mysql://localhost:3306/appserver";
+	public String url = "jdbc:mysql://127.0.0.1:3306/appserver?characterEncoding=utf-8&autoReconnect=true&serverTimezone=UTC";
 	public String username = "root";
 	public String password = "meiyoumima";
 	
@@ -72,6 +72,17 @@ public class SqlHelper {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+	
+	public void close() {
+		try {
+			if(rs != null) rs.close();
+			if(ps != null) ps.close();
+			if(con != null) con.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 	
 }

@@ -30,7 +30,9 @@ public class UploadServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		System.out.println("Upload");
 		String data = request.getParameter("data");
+		System.out.println(data);
 		JSONObject dataObject = JSONObject.parseObject(data);
 		String mobile = dataObject.getString("mobile");
 		String mark = dataObject.getString("mark");
@@ -39,15 +41,17 @@ public class UploadServlet extends HttpServlet {
 		if (ms.findPlayer(mobile)) {
 			if (ms.updateMark(mobile, mark)) {
 				//First global if friends then add.
-				List<Player> list = ms.getGlobalTopMark(10);
-				writer.write(ChangeToJSON.playerToJSON(list).toString());
+				//List<Player> list = ms.getGlobalTopMark(5);
+				//Integer rank = ms.findRank(mobile);
+				writer.write("Upload Success");
 			}else {
 				writer.write("Update Fail");
 			}
 		}else {
 			if(ms.insertMark(mobile, mark)) {
-				List<Player> list = ms.getGlobalTopMark(10);
-				writer.write(ChangeToJSON.playerToJSON(list).toString());
+				//List<Player> list = ms.getGlobalTopMark(5);
+				//Integer rank = ms.findRank(mobile);
+				writer.write("Upload Success");
 			}else {
 				writer.write("Insert Fail");
 			}
