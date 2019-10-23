@@ -5019,7 +5019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5774cca48052b649a9560dfd4aecf2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShowGPS: {fileID: 0}
+  ShowGPS: {fileID: 482795914}
 --- !u!1001 &384447348
 PrefabInstance:
   m_ObjectHideFlags: 0
