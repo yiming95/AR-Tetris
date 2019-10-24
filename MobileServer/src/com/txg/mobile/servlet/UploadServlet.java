@@ -30,9 +30,8 @@ public class UploadServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
-		System.out.println("Upload");
 		String data = request.getParameter("data");
-		System.out.println("up"+data);
+		System.out.println("upload"+ data);
 		JSONObject dataObject = JSONObject.parseObject(data);
 		String mobile = dataObject.getString("mobile");
 		String mark = dataObject.getString("mark");
